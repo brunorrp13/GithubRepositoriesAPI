@@ -4,18 +4,18 @@ plugins {
     id 'androidx.navigation.safeargs'
     id 'io.gitlab.arturbosch.detekt'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
-    compileSdk 32
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.example.githubauthors"
         minSdk 21
-        targetSdk 32
+        targetSdk 31
         versionCode 1
         versionName "1.0"
-        buildConfigField("String","BASE_URL",MY_URL)
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

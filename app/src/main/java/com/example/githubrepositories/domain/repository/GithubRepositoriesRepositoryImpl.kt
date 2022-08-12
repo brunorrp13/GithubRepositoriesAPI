@@ -6,7 +6,7 @@ import com.example.githubrepositories.data.repository.GithubRepositoriesReposito
 import com.example.githubrepositories.data.util.Resource
 import retrofit2.Response
 
-class RepositoriesRepositoryImpl(
+class GithubRepositoriesRepositoryImpl(
     private val repositoriesAPIService: RepositoriesAPIService
 ) : GithubRepositoriesRepository {
 
