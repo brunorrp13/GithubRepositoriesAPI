@@ -64,10 +64,10 @@ class RepositoriesAPIServiceTest {
         runBlocking {
             enqueueMockResponse("repositoriesresponse.json")
             val responseBody = service.getRepositories("kotlin").body()
-            val articlesList = responseBody!!.repositoryItems
-            val article = articlesList[0]
-            assertThat(article.id).isEqualTo(3432266)
-            assertThat(article.fullName).isEqualTo("JetBrains/kotlin")
+            val repositoryList = responseBody!!.repositoryItems
+            val repository = repositoryList[0]
+            assertThat(repository.id).isEqualTo(3432266)
+            assertThat(repository.fullName).isEqualTo("JetBrains/kotlin")
         }
     }
 
