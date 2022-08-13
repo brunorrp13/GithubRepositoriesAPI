@@ -1,6 +1,7 @@
 package com.example.githubrepositories.data.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class License(
     @SerializedName("key")
@@ -13,4 +14,4 @@ data class License(
     var spdxId: String,
     @SerializedName("url")
     var url: String
-)
+): Serializable

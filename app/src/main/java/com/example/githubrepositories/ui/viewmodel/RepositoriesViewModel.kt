@@ -11,9 +11,11 @@ import androidx.lifecycle.viewModelScope
 import com.example.githubrepositories.data.model.RepositoriesResponse
 import com.example.githubrepositories.data.util.Resource
 import com.example.githubrepositories.domain.usecase.GetRepositoriesUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.Exception
+import javax.inject.Inject
 
 class RepositoriesViewModel(
     private val app: Application,
@@ -21,7 +23,7 @@ class RepositoriesViewModel(
 ) : AndroidViewModel(app) {
     val repositories: MutableLiveData<Resource<RepositoriesResponse>> = MutableLiveData()
 
-    fun getGithubRepositories(country: String, page: Int) = viewModelScope.launch(Dispatchers.IO) {
+    fun getGithubRepositories(page: Int) = viewModelScope.launch(Dispatchers.IO) {
         repositories.postValue(Resource.Loading())
         try{
             if(isNetworkAvailable(app)) {

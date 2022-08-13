@@ -1,6 +1,7 @@
 package com.example.githubrepositories.data.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Owner(
     @SerializedName("avatar_url")
@@ -39,4 +40,4 @@ data class Owner(
     var type: String,
     @SerializedName("url")
     var url: String
-)
+): Serializable

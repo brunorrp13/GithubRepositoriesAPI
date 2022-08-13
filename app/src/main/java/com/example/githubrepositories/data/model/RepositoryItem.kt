@@ -1,8 +1,7 @@
 package com.example.githubrepositories.data.model
 
-import com.example.githubrepositories.data.model.License
-import com.example.githubrepositories.data.model.Owner
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class RepositoryItem(
     @SerializedName("allow_forking")
@@ -163,4 +162,4 @@ data class RepositoryItem(
     var watchersCount: Int,
     @SerializedName("web_commit_signoff_required")
     var webCommitSignoffRequired: Boolean
-)
+): Serializable

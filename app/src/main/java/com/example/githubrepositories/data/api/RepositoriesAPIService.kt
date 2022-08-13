@@ -9,9 +9,9 @@ import retrofit2.http.Query
 
 interface RepositoriesAPIService {
 
-    @GET
+    @GET("search/repositories")
     suspend fun getRepositories(
-        @Query("language")
+        @Query("q")
         language:String = LANGUAGE_QUERY_PARAM
     ): Response<RepositoriesResponse>
 
