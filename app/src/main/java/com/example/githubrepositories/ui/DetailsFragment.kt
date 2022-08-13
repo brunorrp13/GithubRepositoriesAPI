@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.githubrepositories.R
 import com.example.githubrepositories.data.model.RepoDetails
@@ -27,10 +28,18 @@ class DetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         fragmentDetailsBinding = FragmentDetailsBinding.bind(view)
 
-        val args : DetailsFragmentArgs by navArgs()
+        val args: DetailsFragmentArgs by navArgs()
         val repository = args.selectedRepository
+        fillInfo(repository)
+        setOnBackButton()
+    }
 
-            fillInfo(repository)
+    private fun setOnBackButton() {
+        fragmentDetailsBinding.buttonSecond.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_SecondFragment_to_FirstFragment
+            )
+        }
     }
 
     private fun fillInfo(repository: RepoDetails) {
